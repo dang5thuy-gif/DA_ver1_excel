@@ -1,9 +1,16 @@
-# Dự Án Phân Tích Hiệu Suất Kinh Doanh & Chân Dung Khách Hàng (2016 - 2020)
+# Dự Án Phân Tích Hiệu Suất Kinh Doanh & Khách Hàng (2016 - 2020)
 
 ## Tổng Quan Dự Án
-Dự án này tập trung vào việc xử lý, làm sạch tập dữ liệu giao dịch kinh doanh lớn (giai đoạn 2016 - 2020) và trực quan hóa dữ liệu lên hai Dashboard tương tác chính: **Product Dashboard** (Quản lý hiệu suất sản phẩm) và **Customer Dashboard** (Phân tích hành vi khách hàng). 
+Dự án này tập trung vào việc xử lý, làm sạch tập dữ liệu giao dịch kinh doanh lớn (giai đoạn 2016 - 2020) và trực quan hóa dữ liệu lên hai Dashboard tương tác chính: **Product Dashboard** và **Customer Dashboard**. 
 
 ---
+## Công Nghệ & Công Cụ Sử Dụng
+
+- Excel / Pivot Table
+- Python (Pandas, NumPy)
+- Data Cleaning & Feature Engineering
+- Data Visualization
+
 ## Thông Tin Dataset
 
 - Giai đoạn dữ liệu: 2016 - 2020
@@ -83,7 +90,7 @@ Sau khi dữ liệu được làm sạch, các bảng **Pivot Table** được k
     - % Doanh thu theo dòng sản phẩm: Sử dụng biểu đồ bánh vòng (Doughnut Chart) trực quan hóa trực diện tỷ trọng đóng góp. 
         - Tv And Video Gaming: Chiếm tỷ trọng lớn nhất với 43% (tương đương 87.79M).
         - Computers And Home Office: Đứng thứ hai với 38% (tương đương 78.43M).
-        - Ba ngành hàng còn lại (Photography, Kitchen Appliances, Smart Electronics) đóng góp phần nhỏ nhỏ hơn, trong đó mảng thiết bị thông minh (Smart Electronics) chỉ chiếm 2%.
+        - Ba ngành hàng còn lại (Photography, Kitchen Appliances, Smart Electronics) đóng góp phần nhỏ hơn đáng kể, trong đó mảng thiết bị thông minh (Smart Electronics) chỉ chiếm 2%.
     - Số lượng đơn hàng theo năm (Column Chart)
         - Giai đoạn 2016 - 2019 chứng kiến sự biến động : Năm 2016 đạt `16,572` đơn, giảm nhẹ vào năm 2017 (`13,472`), sau đó tăng trưởng mạnh mẽ trở lại vào năm 2018 (`17,634`) và đạt đỉnh vào năm 2019 với `20,682` đơn hàng.
         - Năm 2020 ghi nhận mức sụt giảm nghiêm trọng xuống còn `2,819` đơn hàng.
@@ -115,7 +122,7 @@ VER1/
 ```
 ## Insight Chiến Lược Rút Ra từ Dashboard
 
-1. **Insight Xu Hướng Thị Trường (Khủng hoảng & Cơ hội):** Năm 2020, cuộc khủng hoảng Covid-19 toàn cầu bóp nghẹt các ngành giải trí, nhiếp ảnh và gia dụng khiến doanh số các mảng này rơi tự do. Tuy nhiên, nó lại là chất xúc tác cho dòng sản phẩm Computers And Home Office tăng trưởng, đạt 22.61M (chiếm 3/4 doanh thu toàn năm 2020). Điều này phản ánh rõ ràng sự bắt buộc dịch chuyển từ học tập, làm việc trực tiếp sang làm việc tại nhà (Work From Home) và học trực tuyến.
+1. **Insight Xu Hướng Thị Trường (Khủng hoảng & Cơ hội):** Năm 2020, cuộc khủng hoảng Covid-19 toàn cầu tác động mạnh đến các ngành giải trí, nhiếp ảnh và gia dụng khiến doanh số các mảng này rơi tự do. Tuy nhiên, nó lại là chất xúc tác cho dòng sản phẩm Computers And Home Office tăng trưởng, đạt 22.61M (chiếm 3/4 doanh thu toàn năm 2020). Điều này phản ánh rõ ràng sự bắt buộc dịch chuyển từ học tập, làm việc trực tiếp sang làm việc tại nhà (Work From Home) và học trực tuyến.
 2. **Insight Chất Lượng Khách Hàng:** Năm 2020 chứng kiến sự sụt giảm về số lượng khách hàng vãng lai nhưng ghi nhận mức CLV cao nhất. Điều này chứng minh bộ khung khách hàng giữ chân được là tệp khách hàng trung thành siêu chất lượng có nền tảng tài chính bền vững.
 3. **Insight Cơ Cấu Doanh Thu:** Dòng tiền hoạt động chủ yếu dựa vào tệp khách hàng phổ thông (Hạng Bronze / Trình độ Bachelor) chứ không phụ thuộc vào nhóm siêu cao cấp.
 
