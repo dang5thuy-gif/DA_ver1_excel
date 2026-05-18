@@ -113,7 +113,7 @@ VER1/
 │
 └── README.md
 ```
-## Tóm Tắt Insight Chiến Lược Rút Ra từ Dashboard
+## Insight Chiến Lược Rút Ra từ Dashboard
 
 1. **Insight Xu Hướng Thị Trường (Khủng hoảng & Cơ hội):** Năm 2020, cuộc khủng hoảng Covid-19 toàn cầu bóp nghẹt các ngành giải trí, nhiếp ảnh và gia dụng khiến doanh số các mảng này rơi tự do. Tuy nhiên, nó lại là chất xúc tác cho dòng sản phẩm Computers And Home Office tăng trưởng, đạt 22.61M (chiếm 3/4 doanh thu toàn năm 2020). Điều này phản ánh rõ ràng sự bắt buộc dịch chuyển từ học tập, làm việc trực tiếp sang làm việc tại nhà (Work From Home) và học trực tuyến.
 2. **Insight Chất Lượng Khách Hàng:** Năm 2020 chứng kiến sự sụt giảm về số lượng khách hàng vãng lai nhưng ghi nhận mức CLV cao nhất. Điều này chứng minh bộ khung khách hàng giữ chân được là tệp khách hàng trung thành siêu chất lượng có nền tảng tài chính bền vững.
