@@ -93,9 +93,8 @@ Sau khi dữ liệu được làm sạch, các bảng **Pivot Table** được k
         - Computers And Home Office bám sát với doanh thu `$78,430,400` và lợi nhuận `$11,761,766`.
         - Mặc dù Smart Electronics có doanh thu thấp nhất (`$4,543,796`), dòng sản phẩm này vẫn duy trì tỷ lệ sinh lời đồng đều so với quy mô của nó (`$680,893` lợi nhuận).
     - Doanh thu theo năm của các dòng sản phẩm (Stacked Column Chart)
-
-    - Biểu đồ cột chồng cho thấy tổng quy mô doanh thu đạt đỉnh vào năm 2019 (vượt mốc `$50M`), đồng pha với biểu đồ số lượng đơn hàng.
-    - Tỷ lệ phân bổ giữa các dòng sản phẩm tương đối ổn định qua các năm 2016 - 2019, trong đó mảng Computers And Home Office và Tv And Video Gaming luôn chiếm phần lớn diện tích cột.
+        - Biểu đồ cột chồng cho thấy tổng quy mô doanh thu đạt đỉnh vào năm 2019 (vượt mốc `$50M`), đồng pha với biểu đồ số lượng đơn hàng.
+        - Tỷ lệ phân bổ giữa các dòng sản phẩm tương đối ổn định qua các năm 2016 - 2019, trong đó mảng Computers And Home Office và Tv And Video Gaming luôn chiếm phần lớn diện tích cột.
 ---
 ## Cấu Trúc Thư Mục Dự Án
 
