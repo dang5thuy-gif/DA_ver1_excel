@@ -7,9 +7,64 @@ Dự án này tập trung vào việc xử lý, làm sạch tập dữ liệu gi
 ## Công Nghệ & Công Cụ Sử Dụng
 
 - Excel / Pivot Table
-- Python (Pandas, NumPy)
+- Python (Pandas, NumPy, Scikit-learn, SQLAlchemy)
+- Microsoft SQL Server (Data Warehouse - Star Schema)
+- Machine Learning (Random Forest Classifier)
 - Data Cleaning & Feature Engineering
 - Data Visualization
+
+## **Data Warehouse & Machine Learning**
+
+### 1. Xây dựng Data Warehouse (SQL Server)
+- Thiết kế Star Schema: `DimCustomer`, `DimProduct`, `FactSales`
+- Tự động ETL từ Staging (`stg.CleanDataRaw`) sang kho dữ liệu
+- Feature Engineering (RFM, Recency, Frequency, Monetary...)
+
+### 2. Machine Learning - Dự đoán Churn
+- **Mô hình**: Random Forest Classifier
+- **Mục tiêu**: Dự đoán xác suất khách hàng rời bỏ (`ChurnScore`)
+- **Kết quả output**: Tự động tạo nhiều file báo cáo trong thư mục `outputs/`
+
+**Các file output quan trọng:**
+- `churn_list_full.xlsx` — Toàn bộ danh sách khách hàng
+- `churn_high_risk.xlsx` — Khách hàng có nguy cơ churn cao (ưu tiên giữ chân)
+- `top100_churn.xlsx` — Top 100 khách hàng cần can thiệp khẩn cấp
+- `churn_by_country.xlsx` & `churn_by_loyalty.xlsx` — Báo cáo theo phân khúc
+
+---
+## **Quy Trình Thực Hiện**
+
+Dưới đây là quy trình thực hiện hoàn chỉnh theo thứ tự:
+
+### **Bước 1: Thiết lập Data Warehouse**
+- Mở **SQL Server Management Studio**
+- Chạy file `Setup_DataWarehouse_All.sql` để tạo các bảng và Stored Procedures
+
+### **Bước 2: Nạp dữ liệu từ Excel vào SQL Server**
+
+```bash
+python upload_to_staging.py
+```
+### Bước 3: Chạy ETL & Feature Engineering
+Chạy trong SQL Server Management Studio:
+
+```sql
+EXEC dw.sp_ETL_LoadDataWarehouse;
+EXEC dw.sp_FE_BuildCustomerSnapshot;
+```
+
+### Bước 4: Chạy mô hình Machine Learning & Tạo báo cáo
+
+```bash
+python churn_prediction.py
+```
+
+### Các File Output Chính
+- churn_list_full.xlsx
+- churn_high_risk.xlsx
+- top100_churn.xlsx
+- churn_by_country.xlsx
+- churn_by_loyalty.xlsx
 
 ## Thông Tin Dataset
 
@@ -106,19 +161,20 @@ Sau khi dữ liệu được làm sạch, các bảng **Pivot Table** được k
 ## Cấu Trúc Thư Mục Dự Án
 
 ```text
-VER1/
-│
-├── data/
-│   ├── Cleaned_DB.xlsx
-│   └── DB.xlsx
-│
-├── images/
-│   ├── customer_dashboard.png
-│   └── product_dashboard.png
-│
-├── clean_data.py
-│
-└── README.md
+ver1/
+├── data/                          
+│   └── Cleaned_DB.xlsx
+├── outputs/                       
+├── models/                        
+├── sql/                           
+│   └── Setup_DataWarehouse_All.sql
+├── src/                           
+│   ├── upload_to_staging.py
+│   ├── churn_prediction.py
+│   ├── reverse_etl.py
+│   ├── analyze_churn.py
+│   └── churn_business_insights.py
+├── README.md
 ```
 ## Insight Chiến Lược Rút Ra từ Dashboard
 
@@ -132,7 +188,10 @@ VER1/
 
 * **Về Sản Phẩm:** Tiếp tục tối ưu chuỗi cung ứng cho mảng TV & Gaming; thiết kế các gói combo setup không gian làm việc chuyên nghiệp để đón đầu xu hướng dịch chuyển từ xa; thúc đẩy bán chéo (Cross-selling) cho mảng *Smart Electronics*.
 * **Về Khách Hàng:** Tập trung ngân sách tiếp thị số vào tệp khách hàng cử nhân tại Bắc Mỹ; xây dựng chương trình thăng hạng thành viên tích cực cho nhóm khách hàng hạng Bronze để tối ưu hóa tần suất mua hàng.
-
+* **Về Churn Prediction:** 
+    - Ưu tiên liên hệ trực tiếp và tặng voucher cao cấp cho nhóm **High Risk**.
+    - Xây dựng chương trình loyalty đặc biệt cho khách hàng Bronze có CLV cao.
+    - Theo dõi định kỳ Top 100 khách hàng churn cao nhất.
 ---
 ## Kết Luận
 
